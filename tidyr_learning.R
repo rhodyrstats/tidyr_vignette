@@ -25,4 +25,6 @@ billboard_path <- paste0(vignette_url,"billboard.csv")
 billboard <- tbl_df(read.csv(billboard_path, stringsAsFactors = FALSE))
 billboard
 
-billboard
+billboard2 <- billboard %>%
+  gather(week, rank,wk1:wk76,na.rm=T)
+billboard2
