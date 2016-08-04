@@ -15,7 +15,14 @@ preg2 <- preg %>%
 
 #Grab pew csv from GitHub
 pew_path <- paste0(vignette_url, "pew.csv")
-pew <- read.csv(pew_path, stringsAsFactors = FALSE)
-tbl_df(pew)
+pew <- tbl_df(read.csv(pew_path, stringsAsFactors = FALSE))
+pew
+pew_tidy <- pew %>%
+  gather(income, frequency, -religion)
 
+#grab billboard data from GitHub
+billboard_path <- paste0(vignette_url,"billboard.csv")
+billboard <- tbl_df(read.csv(billboard_path, stringsAsFactors = FALSE))
+billboard
 
+billboard
