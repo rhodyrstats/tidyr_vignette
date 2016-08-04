@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "#Required packages\nlibrary(\"tidyr\")\nlibrary(\"dplyr\")\n#Grab csv from GitHub (not readily availble on local)\nvignette_url <- \"https://raw.githubusercontent.com/hadley/tidyr/master/vignettes/\"\npreg_path <- paste0(vignette_url, \"preg.csv\")\npreg <- read.csv(preg_path, stringsAsFactors = FALSE)\npreg\n\n#First tidying example from vignette\npreg2 <- preg %>% \n  gather(treatment, n, treatmenta:treatmentb) %>%\n  mutate(treatment = gsub(\"treatment\", \"\", treatment)) %>%\n  arrange(name, treatment)\n\n#Grab pew csv from GitHub\npew_path <- paste0(vignette_url, \"pew.csv\")\npew <- read.csv(pew_path, stringsAsFactors = FALSE)\ntbl_df(pew)\n\n\n",
+    "created" : 1467885616488.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2712930257",
+    "id" : "D6A0A704",
+    "lastKnownWriteTime" : 1470318278,
+    "last_content_update" : 1470318278714,
+    "path" : "~/projects/tidyr_vignette/tidyr_learning.R",
+    "project_path" : "tidyr_learning.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
